@@ -7,16 +7,15 @@ export default class ButtonPanel extends Component {
   }
 
   render() {
-    return this.props.courses.map((courseName, course) => {
-      return (
-        <StepsButton
-          key={course}
-          course={course}
-          courseName={courseName}
-          clickHandler={this.handleClick}
-          className="steps"
-        />
-      )
-    })
+    return this.props.courses.map((courseName, course) => (
+      <StepsButton
+        key={course}
+        course={course}
+        courseName={courseName}
+        clickHandler={this.handleClick}
+        className="steps"
+        active={this.props.activeCourse === course}
+      />
+    ))
   }
 }

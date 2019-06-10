@@ -15,6 +15,7 @@ export default class StepsContainer extends Component {
         <ButtonPanel
           courses={getAllCourseNames()}
           clickHandler={this.handleClick}
+          activeCourse={this.props.course}
         />
       </div>
     )
