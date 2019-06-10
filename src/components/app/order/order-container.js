@@ -1,11 +1,13 @@
 import React, { Component } from "react"
 import getCourseItems from "../../../utils/courseItem"
+import OrderView from "./order-view"
 
 export default class OrderContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      data: []
+      data: [],
+      selectedItems: {}
     }
   }
 
@@ -26,21 +28,20 @@ export default class OrderContainer extends Component {
     })
   }
 
+  handleItems = (id, itemTitle) => {
+    let { selectedItems } = this.state
+    selectedItems.hasOwnProperty(id)
+      ? delete selectedItems[id]
+      : (selectedItems[id] = itemTitle)
+    this.setState({
+      selectedItems: selectedItems
+    })
+  }
+
   render() {
-    const data = this.state.data
     return (
       <div className="order-container">
-        <h1 className="title">Restaurant Menu</h1>
-        <div>
-          {data.map(res => (
-            <p>
-              {res.id} {res.title}
-            </p>
-          ))}
-        </div>
-        <button onClick={() => this.props.changeCourse(this.props.course + 1)}>
-          Next
-        </button>
+        <OrderView {...this.state} itemHandler={this.handleItems} />
       </div>
     )
   }

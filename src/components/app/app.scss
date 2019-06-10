@@ -40,6 +40,10 @@ button {
   &.order {
     border-bottom: 1px solid $primary-color;
     margin: 5px;
+    &.-selected {
+      color: #ffffff;
+      background: $secondary-color;
+    }
   }
 
   &.next {
