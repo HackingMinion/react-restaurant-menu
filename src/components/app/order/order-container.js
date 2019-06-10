@@ -1,36 +1,29 @@
 import React, { Component } from "react"
+import getCourseItems from "../../../utils/courseItem"
 
 export default class OrderContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentCourse: 0,
       data: []
     }
   }
 
   componentDidMount() {
-    this.setState({
-      data: require("../../../assets/data/fe-tech-data.json")
-    }, () => this.handleGetCourseItems())
+    this.fetchData()
   }
 
-  getItems = () => {
-    const data = this.state.data
-    let items = data.filter(res => {
-      return res.courseType.includes(2) 
-    })
-    console.log(items)
-    this.setState({
-      data: items
-    })
+  componentDidUpdate(props) {
+    if (this.props !== props) {
+      this.fetchData()
+    }
   }
 
-  handleGetCourseItems = (courseNumber = 0) => {
+  fetchData = () => {
+    const data = require("../../../assets/data/fe-tech-data.json")
     this.setState({
-        currentCourse: courseNumber
-      }, () => this.getItems()
-    )
+      data: getCourseItems(data, this.props.course)
+    })
   }
 
   render() {
