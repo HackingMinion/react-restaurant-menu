@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import Order from "./order"
+import Steps from "./steps"
 
 import "./app.scss"
 
@@ -20,6 +21,10 @@ export default class App extends Component {
     const course = this.state.course
     return (
       <main className="app">
+        <Steps
+          course={course}
+          changeCourse={this.handleCourse}
+        />
         <Order
           course={course}
           changeCourse={this.handleCourse}
