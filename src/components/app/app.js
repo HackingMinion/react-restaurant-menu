@@ -8,7 +8,7 @@ export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      course: 4
+      course: 0
     }
   }
 
@@ -18,12 +18,11 @@ export default class App extends Component {
   }
 
   render() {
-    const { course } = this.state
     return (
       <main className="app">
         <h1 className="title">Restaurant Menu</h1>
-        <Steps course={course} changeCourse={this.handleCourse} />
-        <Order course={course} changeCourse={this.handleCourse} />
+        <Steps {...this.state} changeCourse={this.handleCourse} />
+        <Order {...this.state} changeCourse={this.handleCourse} />
         <button className="next" onClick={() => this.handleCourse(this.state.course + 1)}>
           Next
         </button>
