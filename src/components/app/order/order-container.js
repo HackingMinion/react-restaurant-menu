@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import getCourseItems from "../../../utils/courseItem"
 import OrderView from "./order-view"
+import OrderSummary from "./order-summary"
 
 export default class OrderContainer extends Component {
   constructor(props) {
@@ -34,15 +35,23 @@ export default class OrderContainer extends Component {
       ? delete selectedItems[id]
       : (selectedItems[id] = itemTitle)
     this.setState({
-      selectedItems: selectedItems
+      selectedItems
     })
   }
 
   render() {
-    return (
-      <div className="order-container">
-        <OrderView {...this.state} itemHandler={this.handleItems} />
-      </div>
-    )
+    if (this.state.data.length === 0) {
+      return (
+        <div className="order-container">
+          <OrderSummary selectedItems={this.state.selectedItems} />
+        </div>
+      )
+    } else {
+      return (
+        <div className="order-container">
+          <OrderView {...this.state} itemHandler={this.handleItems} />
+        </div>
+      )
+    }
   }
 }
