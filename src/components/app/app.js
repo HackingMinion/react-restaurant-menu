@@ -18,17 +18,15 @@ export default class App extends Component {
   }
 
   render() {
-    const course = this.state.course
+    const { course } = this.state
     return (
       <main className="app">
-        <Steps
-          course={course}
-          changeCourse={this.handleCourse}
-        />
-        <Order
-          course={course}
-          changeCourse={this.handleCourse}
-        />
+        <h1 className="title">Restaurant Menu</h1>
+        <Steps course={course} changeCourse={this.handleCourse} />
+        <Order course={course} changeCourse={this.handleCourse} />
+        <button className="next" onClick={() => this.handleCourse(this.state.course + 1)}>
+          Next
+        </button>
       </main>
     )
   }
