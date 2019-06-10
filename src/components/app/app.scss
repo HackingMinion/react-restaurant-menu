@@ -35,6 +35,10 @@ button {
 
   &.steps {
     margin-right: 15px;
+    &.-active {
+      color: #ffffff;
+      background: $primary-color;
+    }
   }
 
   &.order {
