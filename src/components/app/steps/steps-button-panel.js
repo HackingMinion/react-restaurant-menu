@@ -7,13 +7,14 @@ export default class ButtonPanel extends Component {
   }
 
   render() {
-    return this.props.courses.map((courseName, key) => {
+    return this.props.courses.map((courseName, course) => {
       return (
         <StepsButton
-          key={key}
-          course={key}
+          key={course}
+          course={course}
           courseName={courseName}
           clickHandler={this.handleClick}
+          className="steps"
         />
       )
     })

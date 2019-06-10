@@ -6,6 +6,10 @@ export default class StepsButton extends Component {
   }
 
   render() {
-    return <button onClick={this.handleClick}>{this.props.courseName}</button>
+    return (
+      <button className={this.props.className} onClick={this.handleClick}>
+        {this.props.courseName}
+      </button>
+    )
   }
 }
