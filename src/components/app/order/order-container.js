@@ -29,7 +29,7 @@ export default class OrderContainer extends Component {
   render() {
     const data = this.state.data
     return (
-      <div className="container">
+      <div className="order-container">
         <h1 className="title">Restaurant Menu</h1>
         <div>
           {data.map(res => (
@@ -38,6 +38,9 @@ export default class OrderContainer extends Component {
             </p>
           ))}
         </div>
+        <button onClick={() => this.props.changeCourse(this.props.course + 1)}>
+          Next
+        </button>
       </div>
     )
   }
