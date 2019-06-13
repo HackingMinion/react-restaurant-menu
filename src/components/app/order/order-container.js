@@ -49,6 +49,7 @@ export default class OrderContainer extends Component {
     } else {
       return (
         <div className="order-container">
+          <Grid container spacing="3">
           <OrderView {...this.state} itemHandler={this.handleItems} />
         </div>
       )
