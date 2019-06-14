@@ -27,6 +27,15 @@ export default class OrderContainer extends Component {
     this.setState({
       data: getCourseItems(data, this.props.course)
     })
+    if (Object.entries(this.state.selectedItems).length === 0) {
+      let selectedItems = {}
+      data.map(res => {
+        return (selectedItems[res.courseType[0]] = [])
+      })
+      this.setState({
+        selectedItems
+      })
+    }
   }
 
   handleItems = (id, itemTitle) => {
