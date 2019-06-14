@@ -7,7 +7,7 @@ export default class StepsButton extends Component {
 
   render() {
     return (
-      <button className={`${this.props.className} ${this.props.active ? '-active' : ""}`} onClick={this.handleClick}>
+      <button className={`button ${this.props.className} ${this.props.active ? '-active' : ""}`} onClick={this.handleClick}>
         {this.props.courseName}
       </button>
     )
