@@ -31,9 +31,20 @@ export default class OrderContainer extends Component {
 
   handleItems = (id, itemTitle) => {
     let { selectedItems } = this.state
-    selectedItems.hasOwnProperty(id)
-      ? delete selectedItems[id]
-      : (selectedItems[id] = itemTitle)
+    const item = { id: id, title: itemTitle }
+    if (selectedItems[this.props.course].length !== 0) {
+      let index = selectedItems[this.props.course].findIndex(
+        item => item.id === id
+      )
+      console.log(index)
+      if (index >= 0) {
+        selectedItems[this.props.course].splice(index, 1)
+      } else {
+        selectedItems[this.props.course].push(item)
+      }
+    } else {
+      selectedItems[this.props.course].push(item)
+    }
     this.setState({
       selectedItems
     })
