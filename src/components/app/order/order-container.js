@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import getCourseItems from "../../../utils/courseItem"
 import OrderView from "./order-view"
 import OrderSummary from "./order-summary"
+import Grid from "@material-ui/core/Grid"
 
 export default class OrderContainer extends Component {
   constructor(props) {
@@ -71,6 +72,7 @@ export default class OrderContainer extends Component {
         <div className="order-container">
           <Grid container spacing={3}>
             <OrderView {...this.state} itemHandler={this.handleItems} />
+          </Grid>
         </div>
       )
     }
