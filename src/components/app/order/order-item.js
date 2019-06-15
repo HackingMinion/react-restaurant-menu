@@ -7,7 +7,6 @@ import Typography from "@material-ui/core/Typography"
 
 export default class OrderItem extends Component {
   handleClick = () => {
-    /* this.classList.contains('-selected'); */
     this.props.itemHandler(this.props.id, this.props.itemTitle)
   }
 
