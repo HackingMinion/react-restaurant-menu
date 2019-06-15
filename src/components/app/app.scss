@@ -80,6 +80,11 @@ body {
     &.-active {
       border-bottom: 5px solid $secondary-color;
     }
+
+    &.-disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
   }
 
   &.default {
