@@ -16,7 +16,7 @@ body {
 }
 
 .-hide {
-  display: none;
+  display: none !important;
 }
 
 /* Containers */
@@ -34,17 +34,9 @@ body {
       box-shadow: 0px 0px 1px 4px $secondary-color;
     }
 
-    &:hover {
-      box-shadow: 0px 0px 1px 4px $secondary-color;
-    }
-
     .item-title,
     .item-desc {
       color: $primary-color;
-    }
-
-    .MuiCardActionArea-focusHighlight {
-      background: transparent;
     }
   }
 }
