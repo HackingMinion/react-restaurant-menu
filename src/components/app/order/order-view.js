@@ -8,17 +8,18 @@ export default class OrderView extends Component {
   }
 
   render() {
-    return this.props.data.map(res => (
+    return this.props.courseItems.map(res => (
       <Grid item xs={4} key={res.id}>
-          <OrderItem
-            id={res.id}
-            itemTitle={res.title}
-            itemDescription={res.description}
-            itemImage={res.image}
-            itemHandler={this.handleClick}
-            className="order-item"
-            selected={this.props.selectedItems.hasOwnProperty(res.id)}
-          />
+        <OrderItem
+          id={res.id}
+          itemTitle={res.title}
+          itemDescription={res.description}
+          itemImage={res.image}
+          itemHandler={this.handleClick}
+          className="order-item"
+          selected={(this.props.selectedItems[this.props.course].findIndex(
+            item => item.id === res.id)) >= 0}
+        />
       </Grid>
     ))
   }

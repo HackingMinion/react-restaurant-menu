@@ -94,7 +94,11 @@ export default class OrderContainer extends Component {
       return (
         <div className="order-container">
           <Grid container spacing={3}>
-            <OrderView {...this.state} itemHandler={this.handleItems} />
+            <OrderView
+              {...this.state}
+              course={this.props.course}
+              itemHandler={this.handleItems}
+            />
           </Grid>
           <button className="button default" onClick={this.handleNextCourse}>
             {Object.keys(this.state.selectedItems).length - 1 !==
