@@ -8,7 +8,7 @@ export default class OrderContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      data: [],
+      courseItems: [],
       selectedItems: {}
     }
   }
@@ -88,6 +88,9 @@ export default class OrderContainer extends Component {
       return (
         <div className="summary-container">
           <OrderSummary selectedItems={this.state.selectedItems} />
+          <button className="button default" onClick={this.handleChangeOrder}>
+            Change order
+          </button>
         </div>
       )
     } else {
