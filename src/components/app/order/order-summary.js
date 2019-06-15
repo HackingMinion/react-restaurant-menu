@@ -7,14 +7,15 @@ export default class OrderSummary extends Component {
     const { selectedItems } = this.props
     return Object.keys(selectedItems).map(item => {
       if (selectedItems[item].length !== 0) {
-        let items = []
+        let courseItems = []
         for (let i = 0; i < selectedItems[item].length; i++) {
-          items.push(selectedItems[item][i])
+          courseItems.push(selectedItems[item][i])
         }
         return (
           <OrderSummaryView
+            key={item}
             courseTitle={getCourseName(item)}
-            courseItems={items}
+            courseItems={courseItems}
           />
         )
       }
