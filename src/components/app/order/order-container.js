@@ -42,20 +42,20 @@ export default class OrderContainer extends Component {
 
   handleItems = (id, itemTitle) => {
     let { selectedItems } = this.state
+    const { course } = this.props
     const item = { id: id, title: itemTitle }
-    if (selectedItems[this.props.course].length !== 0) {
-      let index = selectedItems[this.props.course].findIndex(
-        item => item.id === id
-      )
-      console.log(index)
+
+    if (selectedItems[course].length !== 0) {
+      let index = selectedItems[course].findIndex(item => item.id === id)
+      /* If index is not negative delete the item */
       if (index >= 0) {
-        selectedItems[this.props.course].splice(index, 1)
-      } else {
-        selectedItems[this.props.course].push(item)
+        selectedItems[course].splice(index, 1)
+        return
       }
-    } else {
-      selectedItems[this.props.course].push(item)
     }
+
+    selectedItems[course].push(item)
+
     this.setState({
       selectedItems
     })
