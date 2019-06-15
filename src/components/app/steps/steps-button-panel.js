@@ -15,6 +15,7 @@ export default class ButtonPanel extends Component {
         clickHandler={this.handleClick}
         className="steps"
         active={this.props.activeCourse === course}
+        disabled={(this.props.activeCourse < course)}
       />
     ))
   }
