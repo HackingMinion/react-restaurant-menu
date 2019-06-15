@@ -84,9 +84,9 @@ export default class OrderContainer extends Component {
   }
 
   render() {
-    if (this.state.data.length === 0) {
+    if (this.props.summary) {
       return (
-        <div className="order-container">
+        <div className="summary-container">
           <OrderSummary selectedItems={this.state.selectedItems} />
         </div>
       )

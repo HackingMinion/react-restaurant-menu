@@ -8,24 +8,25 @@ export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      course: 0
+      course: 0,
+      summary: false
     }
   }
 
   handleCourse = (course = 0) => {
-    this.setState({ course: course })
-    console.log("app: " + course)
+    this.setState({ course })
+  }
+
+  handleSummary = () => {
+    this.setState({ summary: !this.state.summary })
   }
 
   render() {
     return (
       <main className="app">
-        <h1 className="title">Restaurant Menu</h1>
-        <Steps {...this.state} changeCourse={this.handleCourse} />
-        <Order {...this.state} changeCourse={this.handleCourse} />
-        <button className="next" onClick={() => this.handleCourse(this.state.course + 1)}>
-          Next
-        </button>
+        <h1 className="title">{(this.state.summary) ? "Your order: " : "Restaurant Menu"}</h1>
+        <Steps {...this.state} changeCourse={this.handleCourse} summaryHandler={this.handleSummary}/>
+        <Order {...this.state} changeCourse={this.handleCourse} summaryHandler={this.handleSummary}/>
       </main>
     )
   }
