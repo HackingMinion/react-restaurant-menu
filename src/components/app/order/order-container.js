@@ -24,19 +24,20 @@ export default class OrderContainer extends Component {
   }
 
   fetchData = () => {
-    const data = require("../../../assets/data/fe-tech-data.json")
-    this.setState({
-      data: getCourseItems(data, this.props.course)
-    })
-    if (Object.entries(this.state.selectedItems).length === 0) {
-      let selectedItems = {}
-      data.map(res => {
+    let { selectedItems } = this.state
+    const jsonData = require("../../../assets/data/fe-tech-data.json")
+    const courseItems = getCourseItems(jsonData, this.props.course)
+
+    if (Object.entries(selectedItems).length === 0) {
+      jsonData.map(res => {
+        /* Add empty arrays for each course to add items later */
         return (selectedItems[res.courseType[0]] = [])
       })
-      this.setState({
-        selectedItems
-      })
     }
+    this.setState({
+      courseItems,
+      selectedItems
+    })
   }
 
   handleItems = (id, itemTitle) => {
