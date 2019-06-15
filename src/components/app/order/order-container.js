@@ -50,6 +50,9 @@ export default class OrderContainer extends Component {
       /* If index is not negative delete the item */
       if (index >= 0) {
         selectedItems[course].splice(index, 1)
+        this.setState({
+          selectedItems
+        })
         return
       }
     }
