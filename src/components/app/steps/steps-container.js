@@ -11,7 +11,7 @@ export default class StepsContainer extends Component {
 
   render() {
     return (
-      <div className="steps-container">
+      <div className={`steps-container ${this.props.summary ? "-hide" : ""}`}>
         <ButtonPanel
           courses={getAllCourseNames()}
           clickHandler={this.handleClick}
