@@ -24,9 +24,19 @@ export default class App extends Component {
   render() {
     return (
       <main className="app">
-        <h1 className="title">{(this.state.summary) ? "Your order: " : "Restaurant Menu"}</h1>
-        <Steps {...this.state} changeCourse={this.handleCourse} summaryHandler={this.handleSummary}/>
-        <Order {...this.state} changeCourse={this.handleCourse} summaryHandler={this.handleSummary}/>
+        <h1 className="title">
+          {this.state.summary ? "Your order: " : "Restaurant Menu"}
+        </h1>
+        <Steps
+          {...this.state}
+          changeCourse={this.handleCourse}
+          summaryHandler={this.handleSummary}
+        />
+        <Order
+          {...this.state}
+          changeCourse={this.handleCourse}
+          summaryHandler={this.handleSummary}
+        />
       </main>
     )
   }
