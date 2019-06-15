@@ -61,6 +61,28 @@ export default class OrderContainer extends Component {
     })
   }
 
+  handleNextCourse = () => {
+    const { selectedItems } = this.state
+    const { course } = this.props
+    if (Object.keys(selectedItems).length - 1 !== course) {
+      /* Check if at least one item is selected in main couse */
+      if (course === 4) {
+        if (selectedItems[course].length === 0) {
+          alert("Select at least one item from this course.")
+          return
+        }
+      }
+      this.props.changeCourse(course + 1)
+    } else {
+      this.props.summaryHandler()
+    }
+  }
+
+  handleChangeOrder = () => {
+    this.props.changeCourse()
+    this.props.summaryHandler()
+  }
+
   render() {
     if (this.state.data.length === 0) {
       return (
@@ -74,6 +96,12 @@ export default class OrderContainer extends Component {
           <Grid container spacing={3}>
             <OrderView {...this.state} itemHandler={this.handleItems} />
           </Grid>
+          <button className="button default" onClick={this.handleNextCourse}>
+            {Object.keys(this.state.selectedItems).length - 1 !==
+            this.props.course
+              ? "Next course"
+              : "Show complete order"}
+          </button>
         </div>
       )
     }
