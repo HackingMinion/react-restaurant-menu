@@ -10,7 +10,8 @@ This is a sample project for a restaurant-menu order written in React. In order 
 
 ## Requirements
 
-At least node.js version: 10.16.0. You can get it [here](https://nodejs.org/en/)
+At least node.js version: 10.16.0. You can get it [here](https://nodejs.org/en/).
+
 Check your node version:
 
 ```
