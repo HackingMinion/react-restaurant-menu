@@ -36,7 +36,16 @@ export default class OrderItem extends Component {
             </Typography>
             <Typography
               variant="body2"
-              color="textSecondary"
+              component="p"
+              className="item-info"
+            >
+              Spice Level: {this.props.itemSpiceLevel}, 
+              Allergies: {this.props.itemAllergy.map(allergy => 
+                  `${allergy} `
+                )}
+            </Typography>
+            <Typography
+              variant="body2"
               component="p"
               className="item-desc"
             >

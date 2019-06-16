@@ -13,6 +13,8 @@ export default class OrderView extends Component {
         <OrderItem
           id={res.id}
           itemTitle={res.title}
+          itemSpiceLevel={res.spiceLevel}
+          itemAllergy={res.allery}
           itemDescription={res.description}
           itemImage={res.image}
           itemHandler={this.handleClick}
