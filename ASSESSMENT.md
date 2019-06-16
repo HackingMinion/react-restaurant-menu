@@ -10,7 +10,7 @@ This is a sample project for a restaurant-menu order written in React. In order 
 
 ## Requirements
 
-At least node.js version: 10.16.0. You can get it [here](https://nodejs.org/en/).
+At least node.js version: `10.16.0`. You can get it [here](https://nodejs.org/en/).
 
 Check your node version:
 
@@ -48,20 +48,18 @@ In your browser open a new tab: http://localhost:3000/
 
 ## Documentation
 
-The difficulty with home coding challenge is that I often try to learn too many things at once. It's a great opportunity to use a specific language or framework, but if you’re not familiar with it, it can cost you a lot of time and even more nerves. That's why I first sat down for few hours and decided what frameworks, libraries etc. I am going to use for this particular project. I googled and tested a lot so that I can document and if needed also justify my decisions.
-
 ### Frameworks & Libraries
 
-A quick lock at the package.json file should give an easy overview over the used packages in this project.
+A quick lock at the package.json file gives an simple overview over the used packages in this project.
 
 #### React
 
-That one was pretty simple. The assessment asked to use React or Vue.js so I choose React because I am way more experienced in it and I prefer it over Vue.js any day. I then decided to use [Create React App](https://github.com/facebook/create-react-app) as my starting path. I think it's a great way to start a simple project and get it up and running in no time.
+The assessment asked to use React or Vue.js so I choose React because I am way more experienced in it and I prefer it over Vue.js any day. I then decided to use [Create React App](https://github.com/facebook/create-react-app) as my starting path. I think it's a great way to start a simple project and get it up and running in no time.
 
 #### Node-sass
 
-I probably spent the most time on this decision. In the past I always used it for an easy setup and quick styling, but I realized many times that it's definitely not best practice. I thought about using something like [styled Components](https://www.styled-components.com/) or [JSS](https://cssinjs.org/) but I've never used either or anything similar before. I had a quick look at both but I wasn't convinced mostly because I was scared that I couldn't handle it the bigger the projects gets or that it will take up too much time for me to figure the right way out. I thought maybe I could still do that later, so I stood with **node-sass** for the moment. Obviously it wasn't realistic to change that once my project grew in size. My conclusion is that it's not ideal, but not the end of the world. My scss-file has about 100 lines now and still pretty easy to keep track and maintain it.
-I also used [PostCSS Normalize](https://github.com/csstools/postcss-normalize) to remove browser specific styling for elements.
+I probably spent the most time on this decision. In the past I always used it for an easy setup and quick styling, but I often realized that it's definitely not best practice. I thought about using something like [styled Components](https://www.styled-components.com/) or [JSS](https://cssinjs.org/) but I've never used either or anything similar before. I had a quick look at both but I wasn't convinced mostly because I was scared that I couldn't handle it as the project is getting bigger or that it will take up too much time for me to figure it out. I thought maybe I could still do that later, so I went with **node-sass** for the moment. Obviously it wasn't realistic to change that once my project grew in size. My conclusion is that it's not ideal, but not the end of the world. My scss-file has about 100 lines now and it's still pretty easy to keep track of.
+I also used [PostCSS Normalize](https://github.com/csstools/postcss-normalize) to remove browser specific styling for HTML elements.
 
 #### Material-UI
 
@@ -69,16 +67,16 @@ I added the [Material UI](https://material-ui.com/) component library as it was 
 
 ### Project
 
-In this part I documented the structure of my components and how I nested them.
+In this part I document the structure of my components and how I nested them.
 
 #### App
 
-The app component has two main functionalities: keep track of the current course and if the order is finished and summary should show.
+The app component has two main functionalities: keep track of the current course and if the order is finished the summary should show the final order.
 The component contains the **steps-component** as well as the **order-component**.
 
 #### Steps
 
-The steps component is pretty simple. It contains a panel of buttons, one for each course. All the buttons for courses ahead of the current course, are disabled so that the user has to go through each course and maybe orders more meals than initially intended. Another reason is that this way the main course can't be skipped, where at least one item has to be selected.
+The steps component is pretty simple. It contains a panel of buttons, one for each course. All the buttons for the courses following the current course, are disabled so that the user has to go through each course and maybe orders more meals than initially intended. Another reason is that this way the main course can't be skipped, where at least one item has to be selected.
 
 #### Order
 
@@ -99,10 +97,9 @@ Course Name: Includes an array of all course names and two functions to get all 
 Course Item: A function to remove all items of the wrong course.
 Item Index: A function to find the index of the clicked item in the object of selected items.
 
-### Improve
+### Improvement
 
-There is always room to approve certain things. I have a few things which I quickly want to address:
+There is always room to improve certain things. I have a few things which I quickly want to address:
 
 - Use a different type of styling instead of one styling sheet for all. Make use of the nested components from React.
-- Keep the step buttons always active and therefore check the required item for the main course, before the summary.
 - Rethink the order-container component. I think it grew a bit too big and maybe should outsource some code in a different component.
