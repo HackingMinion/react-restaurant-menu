@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import getCourseItems from "../../../utils/courseItem"
+import getItemIndex from "../../../utils/itemIndex"
 import OrderView from "./order-view"
 import OrderSummary from "./order-summary"
 import Grid from "@material-ui/core/Grid"
@@ -47,6 +48,8 @@ export default class OrderContainer extends Component {
 
     if (selectedItems[course].length !== 0) {
       let index = selectedItems[course].findIndex(item => item.id === id)
+      let index2 = getItemIndex(selectedItems[course], id)
+      console.log(index+" "+index2)
       /* If index is not negative delete the item */
       if (index >= 0) {
         selectedItems[course].splice(index, 1)
