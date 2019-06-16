@@ -10,14 +10,13 @@ This is a sample project for a restaurant-menu order written in React. In order 
 
 ## Requirements
 
-At least node.js version: 10.16.0.
+At least node.js version: 10.16.0. You can get it [here](https://nodejs.org/en/)
 Check your node version:
 
 ```
 node --version
 ```
 
-You can get it [here](https://nodejs.org/en/)
 
 If you have an other version of node installed, consider using Node Version Manager (nvm) to manage multiple active node.js versions and to switch between them.
 
