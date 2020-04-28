@@ -26,15 +26,15 @@ If you have an other version of node installed, consider using Node Version Mana
 
 ## Installation
 
-Clone this repository
+- Clone this repository
 
-In root of the folder:
+- In root of the folder:
 
 ```bash
 npm install
 ```
 
-To start the app via localhost:
+- To start the app via localhost:
 
 ```bash
 npm start
