@@ -28,10 +28,6 @@ If you have an other version of node installed, consider using Node Version Mana
 
 Clone this repository
 
-```
-git clone https://michelgabriel@bitbucket.org/michelgabriel/react-restaurant-menu.git
-```
-
 In root of the folder:
 
 ```bash
