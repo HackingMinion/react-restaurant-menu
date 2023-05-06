@@ -19,6 +19,7 @@ export default class OrderSummary extends Component {
           />
         )
       }
+      return null;
     })
   }
 }
